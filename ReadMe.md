@@ -7,7 +7,7 @@
  - Clone this repository
  - `cd` into `hook.io-test` and run `npm install` 
  - Download and Install [Selenium Stand-alone Server](http://docs.seleniumhq.org/download/) 
- - Start Selenium server ( `open`  the `.jar` file on the command line )
+ - Start Selenium Stand-alone server ( run the `open` command on the `selenium-server-standalone-2.47.1.jar` file on the command line )
  - Run `node tests/basic-test.js`
 
 Note: The basic tests use the `firefox` browser, so you will need to have that installed.
@@ -16,8 +16,6 @@ Note: The basic tests use the `firefox` browser, so you will need to have that i
 
  - Update to Java and JDK version 8 ( two downloads )
  - You may need to run selenium server or tests with `sudo`
-
-
 
 ## Goals
   
@@ -28,7 +26,3 @@ Unit Tests for all hook.io API related functionality are available in the sub-de
 These test suites represent a virtual user who browses the site from a headless browser.
 
 These tests provide an overview of product functionality. Their depth of coverage will aim to be as deep as the user can tranverse the live product. The priority of these cases will depend on priority of the user story.
-
-
-
-
