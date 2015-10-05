@@ -1,10 +1,21 @@
 var tap = require("tape");
-
+var config = require('../../config');
 var webdriverio = require('webdriverio');
-var options = { desiredCapabilities: { browserName: 'firefox' }, logLevel: 'verbose', singleton: true };
+
+var options = {
+  host: config.host,
+  port: config.port,
+  user: config.user,
+  key: config.key,
+  desiredCapabilities: {
+    browserName: 'firefox'
+  },
+  logLevel: 'verbose',
+  singleton: true
+};
+
 var client = webdriverio.remote(options);
 
-var config = require('../../config');
 var baseURL = config.baseUrl;
 
 var parseJSON = require('../../lib/helpers/parseJSON');

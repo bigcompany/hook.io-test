@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "0.12"
+
+script:
+  - "npm test"
+
+addons:
+  sauce_connect:
+    username: "Marak"
+    access_key: "dce5a9ba-c8cb-489e-8916-b22a05972fc5"
