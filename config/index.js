@@ -1,3 +1,3 @@
 module['exports'] = {
-  baseUrl: "http://localhost:9999"
+  baseUrl: "http://hook.io"
 };
