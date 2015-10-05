@@ -1,8 +1,7 @@
 var tap = require("tape");
-
-var r = require('../lib/helpers/_request');
-
-var baseURL = "http://localhost:9999"
+var r = require('../../lib/helpers/_request');
+var config = require('../../config');
+var baseURL = config.baseUrl;
 
 /*
 

@@ -4,8 +4,10 @@ var webdriverio = require('webdriverio');
 var options = { desiredCapabilities: { browserName: 'firefox' }, logLevel: 'verbose', singleton: true };
 var client = webdriverio.remote(options);
 
-var baseURL = "http://localhost:9999"
-var parseJSON = require('../lib/helpers/parseJSON');
+var config = require('../../config');
+var baseURL = config.baseUrl;
+
+var parseJSON = require('../../lib/helpers/parseJSON');
 
 var driver;
 
@@ -49,7 +51,7 @@ tap.test("get the echo hook with form theme, check the response", function (t) {
   // TODO: check that theme loaded as separate tests
   client
     .url(baseURL + "/marak/echo?theme=form")
-    .setValue('#param1', 'hello')
+    .setValue("input[name='param1']", 'hello')
     .submitForm('.form')
     .getText('.hookOutput').then(function(source){
       var echo = parseJSON(source[1]); // TODO: fix bad .hookOutput css
@@ -63,4 +65,3 @@ tap.test('shut down webdriver', function (t){
   client.end();
   t.end();
 });
-
