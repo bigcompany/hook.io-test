@@ -10,7 +10,6 @@
 
 // TODO: we need the ability to delete user accounts in order to perform the tear-down for this test
 
-return;
 var tap = require("tape");
 var r = require('../../lib/helpers/_request');
 var baseURL = "http://localhost:9999"
@@ -24,6 +23,10 @@ tap.test('attempt to signup with no account name or email', function (t) {
   });
 });
 
+var testUser = {
+  name: "bobby"
+};
+
 /*
 
   attempt to signup by account name
@@ -35,7 +38,7 @@ tap.test('attempt to signup by account name with no password', function (t) {
       uri: baseURL + "/signup", 
       method: "POST",
       form: {
-        "email": "Bobby"
+        "email": testUser.name
       },
     }, function (err, res) {
       t.error(err);
@@ -49,7 +52,7 @@ tap.test('attempt to signup by account name mismtached passwords', function (t) 
       uri: baseURL + "/signup", 
       method: "POST",
       form: {
-        "email": "Bobby",
+        "email": testUser.name,
         "password": "foo",
         "confirmPassword": "fooBar"
       },
@@ -65,7 +68,7 @@ tap.test('attempt to signup by account name with valid password', function (t) {
       uri: baseURL + "/signup", 
       method: "POST",
       form: {
-        "email": "Bobby",
+        "email": testUser.name,
         "password": "foo",
         "confirmPassword": "foo"
       },
@@ -74,10 +77,6 @@ tap.test('attempt to signup by account name with valid password', function (t) {
       t.equal(res.res, 'valid');
       t.end();
   });
-});
-
-tap.test('remove the new user from the database', function (t) {
-  
 });
 
 return;
