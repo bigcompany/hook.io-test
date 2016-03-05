@@ -4,12 +4,7 @@ var config = require('../../config');
 var baseURL = config.baseUrl;
 
 // Bobby is a pre-generated user 
-var testUser = {
-  name: "bobby",
-  admin_key: "ad255b3e-833e-41e6-bc68-23439ff27f65", // admin-access-key
-  run_key: "e27b1183-9375-4b64-ad2f-76a2c8ebd064", // only has hook::run
-  read_only: "57a45b7c-7bcd-4c66-a7d4-c847e86764c7" // has only hook::logs::read, events::read
-};
+var testUser = config.testUsers.bobby;
 
 // private hooks / secure logs
 
@@ -63,6 +58,14 @@ tap.test('attempt to view logs for newly created hook - read access', function (
     t.error(err);
     t.equal(typeof res, "object", "returned json object");
     t.equal(res.length, 1, "found one log entry");
+    t.end();
+  });
+});
+
+tap.test('attempt to flush logs for the hook we just created a new hook - correct access key', function (t) {
+  r({ uri: baseURL + "/" + testUser.name + "/" + "test-private-hook/logs?flush=true", method: "POST", json: { hook_private_key: testUser.admin_key } }, function (err, res) {
+    t.error(err);
+    t.equal(res, 1, "flushed logs");
     t.end();
   });
 });

@@ -1,4 +1,5 @@
-  
+// disabled until we have proper teardown for deleting users
+return;  
 // attempt to signup with with un-available account name
 
 // attempt to signup with available email
@@ -24,7 +25,7 @@ tap.test('attempt to signup with no account name or email', function (t) {
 });
 
 var testUser = {
-  name: "bobby"
+  name: "bobby-test-hookio"
 };
 
 /*

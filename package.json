@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/**/*.*"
+    "test": "tape tests/**/*-test.js"
   },
   "author": "",
   "license": "AGPL",

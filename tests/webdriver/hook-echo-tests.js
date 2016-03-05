@@ -1,3 +1,6 @@
+// disabled until we have a paid for saucelabs account
+return;
+
 var tap = require("tape");
 var config = require('../../config');
 var webdriverio = require('webdriverio');
