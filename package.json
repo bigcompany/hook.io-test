@@ -11,6 +11,7 @@
   "dependencies": {
     "request": "^2.64.0",
     "tape": "^4.2.0",
-    "webdriverio": "^3.2.4"
+    "webdriverio": "^3.2.4",
+    "ws": "^1.0.1"
   }
 }
