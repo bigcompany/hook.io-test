@@ -1,8 +1,8 @@
 module['exports'] = {
-  baseUrl: "http://localhost:9999",
-  wsUrl: "localhost:9999",
+  baseUrl: "http://hook.io",
+  wsUrl: "hook.io",
   host: 'ondemand.saucelabs.com',
-  port: 9999,
+  port: 80,
   user: "Marak",
   key: "dce5a9ba-c8cb-489e-8916-b22a05972fc5",
   testUsers: {
